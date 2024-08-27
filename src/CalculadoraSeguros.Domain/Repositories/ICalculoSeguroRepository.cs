@@ -8,4 +8,6 @@ public interface ICalculoSeguroRepository : IRepository<CalculoSeguro>
     void AdicionarSegurado(Segurado segurado);
     void AdicionarVeiculo(Veiculo veiculo);
     void AdicionarCalculoSeguro(CalculoSeguro calculoSeguro);
+    Task<CalculoSeguro> ObterPorId(Guid id);
+    Task<IEnumerable<CalculoSeguro>> ObterTodos();
 }

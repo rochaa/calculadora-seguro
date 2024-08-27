@@ -16,12 +16,12 @@ public class CalcularSeguroHandler(
 
         var calculoSeguro = new CalculoSeguro(command.Nome, command.Cpf, command.Idade, command.Marca, command.Modelo, command.Valor);
 
-        calculoSeguroRepository.AdicionarSegurado(calculoSeguro.se);
-        calculoSeguroRepository.AdicionarCalculoSeguro(calculoSeguro);
+        calculoSeguroRepository.AdicionarSegurado(calculoSeguro.Segurado);
+        calculoSeguroRepository.AdicionarVeiculo(calculoSeguro.Veiculo);
         calculoSeguroRepository.AdicionarCalculoSeguro(calculoSeguro);
 
         await calculoSeguroRepository.UnitOfWork.Commit();
 
-        return new CommandResult("Calculo do segurdo realizado com sucesso.", calculoSeguro);
+        return new CommandResult("Calculo do seguro realizado com sucesso.", calculoSeguro);
     }
 }

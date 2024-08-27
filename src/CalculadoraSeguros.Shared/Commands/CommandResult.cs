@@ -22,9 +22,5 @@ public class CommandResult
         Dados = dados;
     }
 
-    public CommandResult(string mensagem)
-    {
-        Sucesso = false;
-        Mensagem = mensagem;
-    }
+    public CommandResult() { }
 }

@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraSeguros.Infra", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraSeguros.Shared", "src\CalculadoraSeguros.Shared\CalculadoraSeguros.Shared.csproj", "{82555CE1-5A91-4378-B06C-B53FEA85B532}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{45EEB571-0689-41E7-A2D5-CD0CDC589C86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraSeguros.TestesUnitarios", "test\CalculadoraSeguros.TestesUnitarios\CalculadoraSeguros.TestesUnitarios.csproj", "{207C9386-5555-49DF-B4BB-1F6DF0C42248}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,11 +42,16 @@ Global
 		{82555CE1-5A91-4378-B06C-B53FEA85B532}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82555CE1-5A91-4378-B06C-B53FEA85B532}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82555CE1-5A91-4378-B06C-B53FEA85B532}.Release|Any CPU.Build.0 = Release|Any CPU
+		{207C9386-5555-49DF-B4BB-1F6DF0C42248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{207C9386-5555-49DF-B4BB-1F6DF0C42248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{207C9386-5555-49DF-B4BB-1F6DF0C42248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{207C9386-5555-49DF-B4BB-1F6DF0C42248}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{5219FABC-C63D-4902-A881-D04BFE6313E0} = {A98BE44C-EFFE-4BA5-BA5E-0FD4E21548FF}
 		{D29FF491-23E1-436A-AB97-8A8F8F855D69} = {A98BE44C-EFFE-4BA5-BA5E-0FD4E21548FF}
 		{28B6A43F-0029-4CD5-95EF-531F74C56EF5} = {A98BE44C-EFFE-4BA5-BA5E-0FD4E21548FF}
 		{82555CE1-5A91-4378-B06C-B53FEA85B532} = {A98BE44C-EFFE-4BA5-BA5E-0FD4E21548FF}
+		{207C9386-5555-49DF-B4BB-1F6DF0C42248} = {45EEB571-0689-41E7-A2D5-CD0CDC589C86}
 	EndGlobalSection
 EndGlobal
