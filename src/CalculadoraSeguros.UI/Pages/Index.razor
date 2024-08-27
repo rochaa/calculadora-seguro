@@ -1,0 +1,80 @@
+﻿@page "/"
+@inject IHttpClientFactory ClientFactory
+
+@using CalculadoraSeguros.UI.Models
+
+<h1>Cálculos de seguros</h1>
+
+@if (calculosSeguros != null)
+{
+    <div>
+        <label>Média Valor Seguro: @mediaValorSeguro.ValorBR()</label>
+    </div>
+    <div>
+        <label>Média Valor Carros: @mediaValorCarros.ValorBR()</label>
+    </div>
+    <div>
+        <label>Média Premio Puro: @mediaPremioPuro.ValorBR()</label>
+    </div>
+
+    <button @onclick="AtualizarListaDeCalculos">Atualizar</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome do Segurado</th>
+                <th>Marca do Veículo</th>
+                <th>Modelo do Veículo</th>
+                <th>Valor do Veículo</th>
+                <th>Prêmio Puro</th>
+                <th>Valor do Seguro</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var calculo in calculosSeguros)
+            {
+                <tr>
+                    <td>@calculo.Segurado.Nome</td>
+                    <td>@calculo.Veiculo.Marca</td>
+                    <td>@calculo.Veiculo.Modelo</td>
+                    <td>@calculo.Veiculo.Valor.ValorBR()</td>
+                    <td>@calculo.PremioPuro.ValorBR()</td>
+                    <td>@calculo.ValorSeguro.ValorBR()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Carregando dados...</p>
+}
+
+@code {
+    private List<CalculoSeguro> calculosSeguros;
+    private decimal mediaValorSeguro;
+    private decimal mediaValorCarros;
+    private decimal mediaPremioPuro;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ConsultarCalculos();
+    }
+
+    private async Task ConsultarCalculos()
+    {
+        var client = ClientFactory.CreateClient("ApiClient");
+        calculosSeguros = await client.GetFromJsonAsync<List<CalculoSeguro>>("api/CalculoSeguro");
+        if (calculosSeguros != null && calculosSeguros.Count > 0)
+        {
+            mediaValorSeguro = calculosSeguros.Average(c => c.ValorSeguro);
+            mediaValorCarros = calculosSeguros.Average(c => c.Veiculo.Valor);
+            mediaPremioPuro = calculosSeguros.Average(c => c.PremioPuro);
+        }
+    }
+
+    private async Task AtualizarListaDeCalculos()
+    {
+        await ConsultarCalculos();
+    }
+}

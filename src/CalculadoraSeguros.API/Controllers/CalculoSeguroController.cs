@@ -1,9 +1,7 @@
 ﻿using CalculadoraSeguros.Domain.Commands;
 using CalculadoraSeguros.Domain.Entities;
 using CalculadoraSeguros.Domain.Repositories;
-using CalculadoraSeguros.Infra.Data.Repositories;
 using MediatR;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CalculadoraSeguros.API.Controllers
