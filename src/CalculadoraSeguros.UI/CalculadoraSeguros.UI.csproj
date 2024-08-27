@@ -3,17 +3,10 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>a7d229ec-ad16-43f9-bccf-340a22b2aedb</UserSecretsId>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CalculadoraSeguros.API\CalculadoraSeguros.API.csproj" />
+    <ProjectReference Include="..\CalculadoraSeguros.Shared\CalculadoraSeguros.Shared.csproj" />
   </ItemGroup>
 
 </Project>
